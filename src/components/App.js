@@ -1,12 +1,10 @@
-
 import '../styles/App.css';
 import React, { useState } from "react";
-const App = () => {
-  
-  let [data, setData]=useState({text:"",num:""})
 
+const App = () => {
+  let [data, setData] = useState({text:"", num:""})
+ 
   const handleInput = (e) =>{
-    
        setData({
       ...data,
       [e.target.name]:e.target.value
@@ -15,7 +13,6 @@ const App = () => {
   }
   console.log(data);
 
-  // do not change id of input elements
   return (
     <div id="main">
       <label htmlFor='text-input'>Text Input:- </label>
@@ -25,11 +22,10 @@ const App = () => {
       <br/>
 
       <label htmlFor='num-input'>Number input</label>
-      <input name="num" id="num-input" onClick={handleInput} type={'number'} />
+      <input name="num" id="num-input" onChange={handleInput} type={'number'} />
       <br/>
     </div>
   )
 }
-
 
 export default App;  
