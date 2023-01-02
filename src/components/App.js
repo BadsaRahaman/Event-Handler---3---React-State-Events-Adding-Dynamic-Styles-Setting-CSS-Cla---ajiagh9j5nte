@@ -1,31 +1,33 @@
+import React, {useState} from 'react';
 import '../styles/App.css';
-import React, { useState } from "react";
 
 const App = () => {
-  let [data, setData] = useState({text:"", num:""})
- 
+let [data, setData] = useState({
+  "text-input":'',
+  "num-input":''
+})
   const handleInput = (e) =>{
-       setData({
+    setData({
       ...data,
-      [e.target.name]:e.target.value
-    })
-  
+        [e.target.name]:e.target.value
+      })
   }
   console.log(data);
-
+ 
+  // do not change id of input elements
   return (
     <div id="main">
       <label htmlFor='text-input'>Text Input:- </label>
-      <input name="text" id="text-input" type={'text'} onChange={handleInput}/>
+      <input name="text-input" onChange={handleInput} id="text-input" type={'text'} />
 
       <br/>
       <br/>
 
       <label htmlFor='num-input'>Number input</label>
-      <input name="num" id="num-input" onChange={handleInput} type={'number'} />
+      <input name="num-input" onChange={handleInput} id="num-input"  type={'number'} />
       <br/>
     </div>
   )
 }
 
-export default App;  
+export default App;
