@@ -3,8 +3,8 @@ import '../styles/App.css';
 
 const App = () => {
 let [data, setData] = useState({
-  "text-input":'',
-  "num-input":''
+  text:'',
+  num:''
 })
   const handleInput = (e) =>{
     setData({
@@ -18,13 +18,13 @@ let [data, setData] = useState({
   return (
     <div id="main">
       <label htmlFor='text-input'>Text Input:- </label>
-      <input name="text-input" onChange={handleInput} id="text-input" type={'text'} />
+      <input name="text" onChange={handleInput} id="text-input" type={'text'} />
 
       <br/>
       <br/>
 
       <label htmlFor='num-input'>Number input</label>
-      <input name="num-input" onChange={handleInput} id="num-input"  type={'number'} />
+      <input name="num" onChange={handleInput} id="num-input"  type={'number'} />
       <br/>
     </div>
   )
